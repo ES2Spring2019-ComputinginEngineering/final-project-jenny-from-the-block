@@ -13,15 +13,14 @@ import numpy as np
 # Read image 
 solarPic = Image.open('PopulationScaled.png') 
 populationPic = Image.open('SunScaled.png')   
-#solarPic.show() 
-#populationPic.show()
+solarPic.show() 
+populationPic.show()
   
 solarData = np.zeros((613,451))
 populationData = np.zeros((613,451))
 
 solarPix = solarPic.load()
 popPix = populationPic.load()
-#print(popPix[1,2][1])
 solarW, solarH = solarPic.size
 populationW, populationH = populationPic.size
 
