@@ -20,9 +20,8 @@ def openImage(pic):
 openImage("PopulationScaled.png")
 openImage("SunScaled.png")
 
-def getPixelData(pic, RGBA):
-    width, height = pic.size()
-    picData = np.zeros(width, height)
+def getPixelData(pic, RGBA, width, height):
+    picData = np.zeros((width, height))
     pix = pic.load()
     for i in range(width):
         for j in range(height):
@@ -30,4 +29,18 @@ def getPixelData(pic, RGBA):
     return picData
 
 picture = Image.open('PopulationScaled.png') 
-getPixelData(picture, 1)
+poppixeldata = getPixelData(picture, 1, 613, 451)
+picture2 = Image.open("SunScaled.png")
+sunpixeldata = getPixelData(picture2, 0, 613, 451)
+
+def graphPixelData():
+    ratio = sunpixeldata/poppixeldata
+    plt.figure()
+    plt.plot(ratio, "ko")
+    plt.ylabel("Sunlight to population ratio")
+    plt.xlabel("Pixel Index?") 
+    plt.show()
+    
+graphPixelData()
+
+    
