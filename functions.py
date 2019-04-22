@@ -20,6 +20,19 @@ def openImage(pic):
 openImage("PopulationScaled.png")
 openImage("SunScaled.png")
 
+# =============================================================================
+# def convolveImage(pic):
+#     kern = np.array([[-1, -1,-1],
+#                      [0, 0, 0],
+#                      [1, 1, 1]])
+#     blur = ndimage.convolve(pic,kern)
+#     plt.figure()
+#     plt.imshow(blur, cmap = "bwr") 
+#     plt.show()
+#     
+# convolveImage("PopulationScaled.png")
+# =============================================================================
+
 def getPixelData(pic, RGBA, width, height):
     picData = np.zeros((width, height))
     pix = pic.load()
@@ -34,11 +47,18 @@ picture2 = Image.open("SunScaled.png")
 sunpixeldata = getPixelData(picture2, 0, 613, 451)
 
 def graphPixelData():
-    ratio = sunpixeldata/poppixeldata
+    width,height = poppixeldata.shape
+    ratio = np.zeros((width, height))
+    for i in range(width):
+        for j in range(height):
+            if poppixeldata[i,j] == 0:
+                ratio[i,j] = 0
+            else:
+                ratio[i,j] = sunpixeldata[i,j]/poppixeldata[i,j]
     plt.figure()
     plt.plot(ratio, "ko")
     plt.ylabel("Sunlight to population ratio")
-    plt.xlabel("Pixel Index?") 
+    plt.xlabel("Pixel Index") 
     plt.show()
     
 graphPixelData()
