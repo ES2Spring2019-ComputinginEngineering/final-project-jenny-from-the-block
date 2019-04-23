@@ -6,28 +6,22 @@ Authors: @YassiKhorsandian & @Allison Choi
 
 
 # IMPORT STATEMENTS
-# importing PIL 
 from PIL import Image 
-import numpy as np
-  
-# Read image 
-solarPic = Image.open('PopulationScaled.png') 
-populationPic = Image.open('SunScaled.png')   
-solarPic.show() 
-populationPic.show()
-  
-solarData = np.zeros((613,451))
-populationData = np.zeros((613,451))
+from functions import openImage, getPixelData, convolveImage, graphPixelData
 
-solarPix = solarPic.load()
-popPix = populationPic.load()
-solarW, solarH = solarPic.size
-populationW, populationH = populationPic.size
+#Importing the images and opening them as arrays
+openImage("PopulationScaled.png")
+openImage("SunScaled.png")
 
-for i in range(solarW):
-    for j in range(solarH):
-        solarData[i,j] = solarPix[i,j][0]
-        populationData[i,j] = popPix[i,j][1]
+#Getting pixel data from image RGBA values
+picture = Image.open('PopulationScaled.png') 
+poppixeldata = getPixelData(picture, 1, 613, 451)
+picture2 = Image.open("SunScaled.png")
+sunpixeldata = getPixelData(picture2, 0, 613, 451)
 
+#Image processing
+convPop = convolveImage(poppixeldata, "BuGn")
+convSun = convolveImage(sunpixeldata, "YlOrRd")
 
-# DEMONSTRATION CODE
+#Graphing ratio of sun/population
+graphPixelData(sunpixeldata, poppixeldata)
