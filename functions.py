@@ -29,6 +29,7 @@ def convolveImage(picture):  #Convolve each image
     plt.figure()
     plt.imshow(blurred_image) 
     plt.show()
+    blurred_image.save("convPop.png")
 
 def graphPixelData(sunpixeldata, poppixeldata):
     width,height = poppixeldata.shape
