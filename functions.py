@@ -25,7 +25,7 @@ def getPixelData(pic, RGBA, width, height):
     return picData
 
 def convolveImage(pixeldata):  #Convolve each image 
-    t = np.linspace(-1, 1, 5)
+    t = np.linspace(-0.1,0.1,3)
     bump = np.exp(-0.1*t**2)
     bump /= np.trapz(bump)
     kern = bump[:, np.newaxis] * bump[np.newaxis, :]
