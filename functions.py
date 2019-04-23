@@ -24,11 +24,14 @@ def getPixelData(pic, RGBA, width, height):
             picData[i,j] = pix[i,j][RGBA]
     return picData
 
-def convolveImage(pixeldata, color):
-    kern = np.array([[-1, -1,-1],[0, 0, 0],[1, 1, 1]])
+def convolveImage(pixeldata):  #Convolve each image 
+    t = np.linspace(-1, 1, 5)
+    bump = np.exp(-0.1*t**2)
+    bump /= np.trapz(bump)
+    kern = bump[:, np.newaxis] * bump[np.newaxis, :]
     blur = ndimage.convolve(pixeldata,kern)
     plt.figure()
-    plt.imshow(blur, cmap = color) 
+    plt.imshow(blur) 
     plt.show()
 
 def graphPixelData(sunpixeldata, poppixeldata):
