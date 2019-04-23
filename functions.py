@@ -20,19 +20,6 @@ def openImage(pic):
 openImage("PopulationScaled.png")
 openImage("SunScaled.png")
 
-# =============================================================================
-# def convolveImage(pic):
-#     kern = np.array([[-1, -1,-1],
-#                      [0, 0, 0],
-#                      [1, 1, 1]])
-#     blur = ndimage.convolve(pic,kern)
-#     plt.figure()
-#     plt.imshow(blur, cmap = "bwr") 
-#     plt.show()
-#     
-# convolveImage("PopulationScaled.png")
-# =============================================================================
-
 def getPixelData(pic, RGBA, width, height):
     picData = np.zeros((width, height))
     pix = pic.load()
@@ -45,6 +32,16 @@ picture = Image.open('PopulationScaled.png')
 poppixeldata = getPixelData(picture, 1, 613, 451)
 picture2 = Image.open("SunScaled.png")
 sunpixeldata = getPixelData(picture2, 0, 613, 451)
+
+def convolveImage(pixeldata, color):
+    kern = np.array([[-1, -1,-1],[0, 0, 0],[1, 1, 1]])
+    blur = ndimage.convolve(pixeldata,kern)
+    plt.figure()
+    plt.imshow(blur, cmap = color) 
+    plt.show()
+    
+convolveImage(poppixeldata, "BuGn")
+convolveImage(sunpixeldata, "YlOrRd")
 
 def graphPixelData():
     width,height = poppixeldata.shape
