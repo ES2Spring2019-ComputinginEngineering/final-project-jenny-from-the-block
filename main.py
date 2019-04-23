@@ -7,7 +7,6 @@ Authors: @YassiKhorsandian & @Allison Choi
 
 # IMPORT STATEMENTS
 from PIL import Image 
-from PIL import ImageFilter
 from functions import openImage, getPixelData, convolveImage, graphPixelData
 
 #Importing the images and opening them as arrays
@@ -21,11 +20,8 @@ picture2 = Image.open("SunScaled.png")
 sunpixeldata = getPixelData(picture2, 0, 613, 451)
 
 #Image processing
-convPop = convolveImage(poppixeldata)
+convPop = convolveImage(picture)
 #conPopData = getPixelData(convPop, 1, 451, 613)
 
 #Graphing ratio of sun/population
 graphPixelData(sunpixeldata, poppixeldata)
-
-blurred_image = picture.filter(ImageFilter.BLUR)
-blurred_image.show()
