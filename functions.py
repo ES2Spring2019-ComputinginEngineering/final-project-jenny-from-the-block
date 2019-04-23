@@ -8,7 +8,7 @@ Created on Tue Apr 16 16:02:14 2019
 import imageio
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy import ndimage
+from PIL import ImageFilter
 
 def openImage(pic):
     im = np.array(imageio.imread(pic))
@@ -24,14 +24,10 @@ def getPixelData(pic, RGBA, width, height):
             picData[i,j] = pix[i,j][RGBA]
     return picData
 
-def convolveImage(pixeldata):  #Convolve each image 
-    t = np.linspace(-0.1,0.1,3)
-    bump = np.exp(-0.1*t**2)
-    bump /= np.trapz(bump)
-    kern = bump[:, np.newaxis] * bump[np.newaxis, :]
-    blur = ndimage.convolve(pixeldata,kern)
+def convolveImage(picture):  #Convolve each image 
+    blurred_image = picture.filter(ImageFilter.BLUR)
     plt.figure()
-    plt.imshow(blur) 
+    plt.imshow(blurred_image) 
     plt.show()
 
 def graphPixelData(sunpixeldata, poppixeldata):
