@@ -6,8 +6,8 @@ Authors: @YassiKhorsandian & @Allison Choi
 
 
 # IMPORT STATEMENTS
-from PIL import Image 
-from functions import openImage, getPixelData, convolveImage, graphPixelData
+from PIL import Image
+from functions import openImage, getPixelData, convolveImage, graphPixelData1, graphPixelData2, findRatio, findMaxIndex, placeLocator
 
 #Importing the images and opening them as arrays
 openImage("PopulationScaled.png")
@@ -25,5 +25,12 @@ picture3 = Image.open('convPop.png')
 CONVpoppixeldata = getPixelData(picture3, 1, 613, 451)
 #conPopData = getPixelData(convPop, 1, 451, 613)
 
-#Graphing ratio of sun/population
-graphPixelData(sunpixeldata, CONVpoppixeldata)
+#Finding ratio of sunlight/population & maximum value with its index
+ratio = findRatio(sunpixeldata, CONVpoppixeldata)
+maximum, ind, ind2 = findMaxIndex(ratio)
+print("Maximum Ratio: ", maximum)
+print("Index of Point with Maximum Ratio: (", ind, ",", ind2, ")")
+
+graphPixelData1(sunpixeldata, CONVpoppixeldata, ratio)
+graphPixelData2("PopulationScaled.png", ratio)
+placeLocator("PopulationScaled.png", ratio)
