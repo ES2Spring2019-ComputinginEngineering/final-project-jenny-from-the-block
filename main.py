@@ -3,7 +3,7 @@ Authors: @YassiKhorsandian & @Allison Choi
 """
 # IMPORT STATEMENTS
 from PIL import Image
-from functions import openImage, getPixelData, convolveImage, graphPixelData1, graphPixelData2, findRatio, findMaxIndex, placeLocator
+from functions import openImage, getPixelData, convolveImage, graphPixelData1, graphPixelData2, findRatio, findMaxIndex, placeIndicator
 
 #Importing the images and opening them as arrays
 openImage("PopulationScaled.png")
@@ -30,4 +30,4 @@ print("Index of Point with Maximum Ratio: (", ind, ",", ind2, ")")
 #Graphing data
 graphPixelData1(sunpixeldata, CONVpoppixeldata, ratio)
 graphPixelData2("PopulationScaled.png", ratio)
-placeLocator("PopulationScaled.png", ratio)
+placeIndicator("PopulationScaled.png", ratio)
