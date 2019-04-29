@@ -20,16 +20,12 @@ In order to find the optimal location for the placement of solar cells in a regi
 * "convPop.png": blurred/convolved version of the population image
 * "SolarPlacement.mov": extra credit short video describing the project
 
-## How to format your readme
-
-In your readme, you can:
-```
-Give code examples
-```
-
-You can also include useful links, like this one with information about [formatting markdown](https://help.github.com/en/articles/basic-writing-and-formatting-syntax)
-
-You can 
-- Also
-- Make
-- Lists
+## Overview of Code
+* openImage: open the image of sunlight and population data
+* getPixelData: obtain the RGBA values for each pixel of the imported images (as arrays)
+* convolveImage: convolve the population image to reduce the noise
+* findRatio: finding ratio of sunlight to population
+* graphPixelData1: graphing ratio array versus pixel index
+* graphPixelData2: creating new RGBA image from ratio array
+* findMaxIndex: finding the location where the ration of sunlight to population is at a maximum
+* placeIndicator: place an indicator on the map where the ideal solar farm placement would be
