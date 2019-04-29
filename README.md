@@ -13,7 +13,7 @@ In order to find the optimal location for the placement of solar cells in a regi
 
 
 ## File List
-* "main.py": code driver that runs all of the functions, assigns variables, and displays the images and graphs
+* **"main.py":** code driver that runs all of the functions, assigns variables, and displays the images and graphs
 * "functions.py": contains all of the functions created during this project
 * "SunScaled.png": image containing the sunlight data from the state of Oregon
 * "PopulationScaled.png": image containing the population data from the state of Oregon
