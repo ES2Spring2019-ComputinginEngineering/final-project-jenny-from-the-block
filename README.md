@@ -5,9 +5,9 @@ The purpose of this project is to determine the best location for the placement 
 Run the "main.py" file \n
 In order to find the optimal location for the placement of solar cells in a region other than the state of Oregon:
 * Obtain scaled images containing population data in green pixels and sunglight data in red pixels
-*Place these files in the same folder as the "main.py"
-*Name the image containing population data "PopulationScaled.png" & the image containing the sunlight data "SunScaled.png"
-*Run the "main.py" file
+* Place these files in the same folder as the "main.py"
+* Name the image containing population data "PopulationScaled.png" & the image containing the sunlight data "SunScaled.png"
+* Run the "main.py" file
 
 
 ## File List
