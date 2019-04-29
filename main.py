@@ -1,10 +1,6 @@
 """
 Authors: @YassiKhorsandian & @Allison Choi
 """
-
-# This files should not contain any function definitions
-
-
 # IMPORT STATEMENTS
 from PIL import Image
 from functions import openImage, getPixelData, convolveImage, graphPixelData1, graphPixelData2, findRatio, findMaxIndex, placeLocator
@@ -31,6 +27,7 @@ maximum, ind, ind2 = findMaxIndex(ratio)
 print("Maximum Ratio: ", maximum)
 print("Index of Point with Maximum Ratio: (", ind, ",", ind2, ")")
 
+#Graphing data
 graphPixelData1(sunpixeldata, CONVpoppixeldata, ratio)
 graphPixelData2("PopulationScaled.png", ratio)
 placeLocator("PopulationScaled.png", ratio)
