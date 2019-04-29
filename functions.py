@@ -40,7 +40,7 @@ def findRatio(sunpixeldata, poppixeldata):
     ratio = np.zeros((width, height))
     for i in range(width):
         for j in range(height):
-            if poppixeldata[i,j] < 50:
+            if poppixeldata[i,j] < 50: #Accounts for areas of very high population (colored in red = very small green pixel value)
                 ratio[i,j] = 0
             else:
                 ratio[i,j] = sunpixeldata[i,j]/poppixeldata[i,j]
