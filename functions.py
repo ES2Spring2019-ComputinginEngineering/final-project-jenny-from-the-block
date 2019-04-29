@@ -6,11 +6,9 @@ Created on Tue Apr 16 16:02:14 2019
 @author: Yassi Khorsandian & Allison Choi
 """
 import imageio
-from PIL import Image 
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.misc import toimage
-from PIL import ImageFilter, Image
+from PIL import ImageFilter
 
 #Opens the image in form of an array
 def openImage(pic):
@@ -83,7 +81,8 @@ def graphPixelData2(pic, ratio):
     plt.imshow(im)
     plt.show()
     
-def placeLocator(pic,ratio):
+#Places a an indicator at the point with the maximum ratio
+def placeIndicator(pic,ratio):
     maximum, ind, ind2 = findMaxIndex(ratio)
     im = np.array(imageio.imread(pic))
     width,height = ratio.shape
