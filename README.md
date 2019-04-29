@@ -2,7 +2,7 @@
 The purpose of this project is to determine the best location for the placement of solar cells in the state of Oregon. The two main variables that are used to determine the practicality of certain regions for the placement of a solar cell include population density and the amount of sunlight received. The location with the maximum amount of sunlight and the smallest population would be optimal for the placement of solar cells.
 
 ## Instructions
-Run the "main.py" file
+Run the "main.py" file \n
 In order to find the optimal location for the placement of solar cells in a region other than the state of Oregon:
 * Obtain scaled images containing population data in green pixels and sunglight data in red pixels
 *Place these files in the same folder as the "main.py"
