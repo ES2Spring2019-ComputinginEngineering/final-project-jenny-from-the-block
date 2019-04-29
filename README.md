@@ -21,6 +21,7 @@ In order to find the optimal location for the placement of solar cells in a regi
 * **"SolarPlacement.mov":** extra credit short video describing the project
 
 ## Overview of Code
+These functions implemented the methods of data importing, image processing, data analysis, and image editing:
 * **openImage:** open the image of sunlight and population data
 * **getPixelData:** obtain the RGBA values for each pixel of the imported images (as arrays)
 * **convolveImage:** convolve the population image to reduce the noise
@@ -29,3 +30,6 @@ In order to find the optimal location for the placement of solar cells in a regi
 * **graphPixelData2:** creating new RGBA image from ratio array
 * **findMaxIndex:** finding the location where the ration of sunlight to population is at a maximum
 * **placeIndicator:** place an indicator on the map where the ideal solar farm placement would be
+
+## Features
+Python Imaging Library (PIL), imageio, numpy, and matplotlib.pyplot the libraries that were imported and used throughout this project. 
