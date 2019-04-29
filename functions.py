@@ -92,20 +92,7 @@ def placeLocator(pic,ratio):
             im[j,i,0]=ratio[i,j]*30
             im[j,i,1]=0
             im[j,i,2]=0
-    p = ind - 8
-    q = ind2 - 8
-    while p < (ind+8):
-        while q < (ind2+8):
-            im[p,q,2] = 200
-            q = q + 1
-        p = p + 1
-    p = ind - 8
-    q = ind2 - 8
-    while q < (ind2+8):
-        while p < (ind+8):
-            im[p,q,2] = 200
-            p = p + 1
-        q = q + 1
     plt.figure()
     plt.imshow(im)
+    plt.plot(ind2,ind, "b*")
     plt.show()
