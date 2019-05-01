@@ -32,4 +32,4 @@ These functions implemented the methods of data importing, image processing, dat
 * **placeIndicator:** place an indicator on the map where the ideal solar farm placement would be
 
 ## Features
-Python Imaging Library (PIL), imageio, numpy, and matplotlib.pyplot the libraries that were imported and used throughout this project. 
+Python Imaging Library (PIL), imageio, numpy, and matplotlib.pyplot were the libraries that were imported and used throughout this project. 
